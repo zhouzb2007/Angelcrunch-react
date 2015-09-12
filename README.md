@@ -53,7 +53,7 @@ Open url `http://localhost:19010/`.
 
 ## THE STRUCTURE
 node_modules/ + 
- 
+
 src/ +  
 
 —— | app/
@@ -69,6 +69,8 @@ src/ +
 —— index.html
 
 —— module.js
+
+—— routes.js
 
 ## webpack.config.js
 

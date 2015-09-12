@@ -54,13 +54,13 @@ Open url `http://localhost:19010/`.
 ## THE STRUCTURE
  node_modules/ +  
 src/ +  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | app/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | actions/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | components/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | stores/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | utils/
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index.html
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; module.js
+:  | app/
+:  | actions/
+:  | components/
+:  | stores/
+:  | utils/
+:  index.html
+:  module.js
 
 ## webpack.config.js
 

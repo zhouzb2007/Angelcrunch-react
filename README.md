@@ -35,7 +35,7 @@ Start the Webpack dev server. The server setting in `server.js`.
 
     npm run server
 Open url `http://localhost:19010/`.
-- - -
+
 
 
 ## Use
@@ -50,7 +50,7 @@ Open url `http://localhost:19010/`.
 * webpack-dev-server (Development)
 * [pushstate-server](https://github.com/scottcorgan/pushstate-server) (Publishing)
 
-- - -
+
 ## THE STRUCTURE
  node_modules/ +  
 src/ +  
@@ -115,8 +115,10 @@ Write project configuration in `WebPack.config.js` , or you can to distinguish t
     
     export const Ajax={...
 
-----------
+--------
 
+
+    // webpack.config.js
     module.exports = {
         target: 'web',
         cache: true,

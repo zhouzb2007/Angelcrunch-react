@@ -52,22 +52,23 @@ Open url `http://localhost:19010/`.
 
 
 ## THE STRUCTURE
-node_modules/ +  
+node_modules/ + 
+ 
 src/ +  
 
-———— | app/
+—— | app/
 
-———— | actions/
+—— | actions/
 
-———— | components/
+—— | components/
 
-———— | stores/
+—— | stores/
 
-———— | utils/
+—— | utils/
 
-———— index.html
+—— index.html
 
-———— module.js
+—— module.js
 
 ## webpack.config.js
 

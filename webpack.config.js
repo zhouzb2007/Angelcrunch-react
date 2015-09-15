@@ -13,14 +13,13 @@ var isProduction = function () {
 var modulePath = { // production
         React                       : path.join(nodeModulesPath, 'react/dist/react.min.js'),
         React_addons                : path.join(nodeModulesPath, 'react/dist/react-with-addons.min.js'),
-        React_Router                : path.join(nodeModulesPath, 'react-router/umd/ReactRouter.min.js'),
+        React_Router                : path.join(nodeModulesPath, 'react-router/umd/ReactRouter.min.js')
     },
     moduleAlias = isProduction() ?
                   { // production
                       'react/addons'                : [modulePath.React_addons],
                       'react'                       : [modulePath.React],
                       'react-router'                : [modulePath.React_Router],
-                      // alt components
                       // static resources
                       'static'                      : staticResourcePath
                   } :
@@ -29,6 +28,10 @@ var modulePath = { // production
                       'static'                      : staticResourcePath
                   },
     noParse = isProduction() ?
+                  [
+                    modulePath.React,
+                    modulePath.React_addons,
+                    modulePath.React_Router
                   ] : [];
 
 // Project config

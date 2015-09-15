@@ -19,7 +19,7 @@ export class ProjectList extends React.Component {
     render() {
         if(!this.state.Header) return null;
         return (
-            <div className="details">
+            <div className="details gray">
                 <this.state.Header />
                 <this.state.List />
             </div>

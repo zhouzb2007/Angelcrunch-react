@@ -38,6 +38,8 @@ coverage.xml
 
 # Django stuff:
 *.log
+tmp/
+src/test.js
 
 # Sphinx documentation
 docs/_build/

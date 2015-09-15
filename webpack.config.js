@@ -14,11 +14,7 @@ var modulePath = { // production
         React                       : path.join(nodeModulesPath, 'react/dist/react.min.js'),
         React_addons                : path.join(nodeModulesPath, 'react/dist/react-with-addons.min.js'),
         React_Router                : path.join(nodeModulesPath, 'react-router/umd/ReactRouter.min.js'),
-        alt                         : path.join(nodeModulesPath, 'alt/dist/alt.min.js'),
-        alt_utils_connectToStores   : path.join(nodeModulesPath, 'alt/utils/connectToStores'),
-        alt_utils_decorators        : path.join(nodeModulesPath, 'alt/utils/decorators'),
-        jquery                      : path.join(nodeModulesPath, 'jquery/dist/jquery.min.js'),
-        showdown                    : path.join(nodeModulesPath, 'showdown/dist/showdown.min.js'),
+        
     },
     moduleAlias = isProduction() ?
                   { // production
@@ -26,12 +22,7 @@ var modulePath = { // production
                       'react'                       : [modulePath.React],
                       'react-router'                : [modulePath.React_Router],
                       // alt components
-                      'alt/utils/connectToStores'   : [modulePath.alt_utils_connectToStores],
-                      'alt/utils/decorators'        : [modulePath.alt_utils_decorators],
-                      'alt'                         : [modulePath.alt],
-                      // alt components END
-                      'jquery'                      : [modulePath.jquery],
-                      'showdown'                    : [modulePath.showdown],
+                      
                       // static resources
                       'static'                      : staticResourcePath
                   } :
@@ -40,12 +31,10 @@ var modulePath = { // production
                       'static'                      : staticResourcePath
                   },
     noParse = isProduction() ?
-                  [modulePath.React,
-                    modulePath.alt,
-                    modulePath.jquery,
-                    modulePath.showdown,
-                    modulePath.React_addons,
-                    'react-mixin'
+                  [
+                  modulePath.React,
+                  modulePath.React_addons,
+                  modulePath.React_Router
                   ] : [];
 
 // Project config
@@ -65,6 +54,7 @@ module.exports = {
     cache: true,
     entry: {
         module  : path.join(srcPath, 'module.js'),
+        test  : path.join(srcPath, 'test.js'),
         common  : ['jquery', 'react', 'react-router', 'alt', 'react-mixin', 'utils/titleHelper']
     },
     resolve: {
@@ -115,6 +105,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: true,
             excludeChunks: ['test'],
+            template: 'src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename:'test.html',
+            inject: true,
+            chunks: ['test','common'],
             template: 'src/index.html'
         }),
         new webpack.optimize.UglifyJsPlugin({
